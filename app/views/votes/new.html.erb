@@ -1,0 +1,67 @@
+<h2> Cast your vote for your top three TV Shows!</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <form class="form-horizontal" id="newShowForm" action="new_vote_path" method="POST">
+      <input type="text" id="Show" class="form-control" name="show" placeholder="Show" ></input>
+      <input type="text" id="Date" class="form-control" name="date" placeholder="Date" ></input>
+      <input type="text" id="Img" class="form-control" name="img" placeholder="Img" ></input>
+      <input type="text" id="Poster" class="form-control" name="poster" placeholder="Poster" ></input>
+      <input type="text" id="Overview" class="form-control" name="overview" placeholder="Overview" ></input>
+      <input type="text" id="Backdrop" class="form-control" name="backdrop" placeholder="Backdrop" ></input>
+    </div>
+    <div class="col-md-4">
+      <input type="hidden" id="1Show" class="form-control" name="show" placeholder="Show" ></input>
+      <input type="hidden" id="1Date" class="form-control" name="date" placeholder="Date" ></input>
+      <input type="hidden" id="1Img" class="form-control" name="img" placeholder="Img" ></input>
+      <input type="hidden" id="1Poster" class="form-control" name="poster" placeholder="Poster" ></input>
+      <input type="hidden" id="1Overview" class="form-control" name="overview" placeholder="Overview" ></input>
+      <input type="hidden" id="1Backdrop" class="form-control" name="backdrop" placeholder="Backdrop" ></input>
+      <input type="text" id="1Users" class="form-control input-lg" name="user" placeholder="Name" required></input>
+    </div>
+    <div class="col-md-4">
+      <input type="hidden" id="2Show" class="form-control" name="show" placeholder="Show" ></input>
+      <input type="hidden" id="2Date" class="form-control" name="date" placeholder="Date" ></input>
+      <input type="hidden" id="2Img" class="form-control" name="img" placeholder="Img" ></input>
+      <input type="hidden" id="2Overview" class="form-control" name="overview" placeholder="Overview" ></input>
+      <input type="hidden" id="2Poster" class="form-control" name="poster" placeholder="Poster" ></input>
+      <input type="hidden" id="2Backdrop" class="form-control" name="backdrop" placeholder="Backdrop" ></input>
+      <button type="submit" id="vote" class="btn btn-lg btn-danger"><a>Vote</a></button>
+    </form>
+  </div>
+</div>
+
+<!-- api filter that pushs data to new form -->
+<div class="row resposive">
+  <div class="col-md-4">
+    <form id="showCheck" class="checkForms border title" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
+      <input name="query" id="input" accept="" placeholder="Halt and Catch Fire" >
+      <input type="submit" id="check" value="Check" class="btn-primary" >
+      <h3 id="showTarget">
+      </h3>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <form id="showCheck1" class="checkForms border" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
+      <input name="query" id="1input" placeholder="Mr. Robot" >
+      <input type="submit" id="1check" value="Check" class="btn-primary">
+      <h3 id="showTarget1">
+      </h3>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <form id="showCheck2" class="checkForms border" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
+      <input name="query" id="2input" placeholder="Silicon Valley" >
+      <input type="submit" id="2check" value="Check" class="btn-primary">
+      <h3 id="showTarget2">
+      </h3>
+    </form>
+  </div>
+</div>
+
+
+<div class="container">
+  <div id="resultsTarget">
+
+  </div>
+</div>

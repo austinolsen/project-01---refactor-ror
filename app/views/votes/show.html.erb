@@ -1,0 +1,13 @@
+<h2><%= @vote.user %></h2>
+<hr>
+<div id="selector">
+  <h3><%=  @vote.show.split(",")[0] %></h3>
+  <p><%=  @vote.overview.split("^,")[0] %></p>
+  <h3><%=  @vote.show.split(",")[1] %></h3>
+  <p><%=  @vote.overview.split("^,")[1] %></p>
+  <h3><%=  @vote.show.split(",")[2] %></h3>
+  <p><%=  @vote.overview.split("^,")[2] %></p>
+</div>
+
+<br></br>
+<%= button_to "Delete", @vote, method: :delete, class: "btn btn-danger" %>

@@ -1,0 +1,45 @@
+<h2>Welcome to Show Vote!</h2>
+<%= link_to "Cast a new Vote!", new_vote_path, class: "btn btn-primary" %>
+<br></br>
+<% @votes.each do |vote| %>
+<div class="group" id="resultsTarget">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= vote.poster.split(",")[0] %>
+    </div>
+    <div class="col-sm-6">
+      <h1> <% vote.show.split(",")[0] %> </h1>
+      <% vote.overview.split("^,")[0] %>
+    </div>
+    <div class="col-sm-4">
+       <h4> --- Voted by <%= link_to vote.user, vote_path(vote) %></h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <%= vote.poster.split(",")[1] %>
+    </div>
+    <div class="col-sm-10">
+      <h1> <% vote.show.split(",")[1] %> </h1>
+      <% vote.overview.split("^,")[1] %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <%= vote.poster.split(",")[2] %>
+    </div>
+    <div class="col-sm-10">
+      <h1> <% vote.show.split(",")[2] %> </h1>
+      <% vote.overview.split("^,")[2] %>
+    </div>
+  </div>
+
+  <div class="spacer">
+  </div>
+</div>
+<% end %>
+
+
+<img class="resize" src="https://image.tmdb.org/t/p/w150_and_h225_bestv2/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg">
